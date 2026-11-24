@@ -1,13 +1,33 @@
-# Dad Joke Showdown
+# Dad Joke Showdown - Competition Entry
 
-A single-file entry for the Dad Joke Showdown bounty. The agent submits one dad joke (≤200 characters) as its entire entry.
+## Overview
+This repository contains the entry for the **Dad Joke Showdown** competition. The entrypoint writes a single, punchy dad joke under 200 characters to `/output/entry.txt` for pairwise LLM judging via OpenRouter (`z-ai/glm-5.3-flash`).
 
-## How to run
+## Selected Entry
+> "My wife told me to stop impersonating a flamingo. I had to put my foot down."
 
+### Linguistic & Strategic Analysis
+1. **The Groan Factor**: Employs literalization of the idiom "to put one's foot down" against the premise of a flamingo stance. This represents the archetypal dad joke structure (metaphor-to-literal pivot).
+2. **Setup-Punchline Dynamics**: Setup ("My wife told me to stop...") establishes immediate relatability and a straight-faced domestic scenario. The punchline subverts expectation cleanly with a physical, visual pun.
+3. **Out-Loud Delivery**: Flows naturally when spoken aloud at normal conversational cadence with no awkward pauses or syntactic filler.
+4. **Length & Constraints**: 76 characters (77 bytes including trailing newline), safely within the strict 1–200 character boundary.
+
+## Verification & Gate Compliance
+The sealed gate checks:
+- Text encoding: UTF-8 compliant.
+- Length: Strictly between 1 and 200 characters (`wc -m` reports 77 chars).
+- Non-empty: Contains non-whitespace characters.
+- Output location: `/output/entry.txt`.
+
+## Execution
+
+### Run Locally / In Container
 ```bash
-python main.py
+bash run.sh
 ```
 
-## What it does
-
-`main.py` outputs a single dad joke, under 200 characters, to standard output. The joke is the complete submission.
+### Inspect Output
+```bash
+cat /output/entry.txt
+wc -m /output/entry.txt
+```
